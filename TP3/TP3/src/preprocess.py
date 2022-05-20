@@ -1,6 +1,9 @@
 '''
     Contains some functions to preprocess the data used in the visualisation.
 '''
+from textwrap import fill
+from this import d
+from traceback import print_tb
 import pandas as pd
 
 
@@ -14,6 +17,8 @@ def convert_dates(dataframe):
             The processed dataframe with datetime-formatted dates.
     '''
     # TODO : Convert dates
+    dataframe["Date_Plantation"] = pd.to_datetime(dataframe["Date_Plantation"])
+    
     return dataframe
 
 
@@ -30,8 +35,7 @@ def filter_years(dataframe, start, end):
             The dataframe filtered by date.
     '''
     # TODO : Filter by dates
-    return dataframe
-
+    return dataframe[(dataframe["Date_Plantation"].dt.year >= start) & (dataframe["Date_Plantation"].dt.year <= end)]
 
 def summarize_yearly_counts(dataframe):
     '''
@@ -47,7 +51,7 @@ def summarize_yearly_counts(dataframe):
             trees for each neighborhood each year.
     '''
     # TODO : Summarize df
-    return None
+    return dataframe.groupby(["Arrond_Nom", "Date_Plantation"]).size().reset_index(name="Counts")
 
 
 def restructure_df(yearly_df):
@@ -69,7 +73,10 @@ def restructure_df(yearly_df):
             The restructured dataframe
     '''
     # TODO : Restructure df and fill empty cells with 0
-    return None
+
+    dataframe = yearly_df.pivot(index="Arrond_Nom", columns="Date_Plantation", values="Counts") 
+
+    return dataframe.fillna(0)
 
 
 def get_daily_info(dataframe, arrond, year):
@@ -87,4 +94,12 @@ def get_daily_info(dataframe, arrond, year):
             neighborhood and year.
     '''
     # TODO : Get daily tree count data and return
-    return None
+
+    dataframe = dataframe[(dataframe["Date_Plantation"].dt.year == year) & (dataframe["Arrond_Nom"] == arrond)]
+    dataframe = dataframe.groupby(["Date_Plantation"]).size().reset_index(name="Counts")
+
+    # fill the missing dates with 0
+    dataframe = dataframe.set_index("Date_Plantation").asfreq("d", fill_value=0).reset_index()
+
+    return dataframe
+
