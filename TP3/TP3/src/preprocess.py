@@ -1,9 +1,6 @@
 '''
     Contains some functions to preprocess the data used in the visualisation.
 '''
-from textwrap import fill
-from this import d
-from traceback import print_tb
 import pandas as pd
 
 
