@@ -2,6 +2,7 @@
     Contains some functions to preprocess the data used in the visualisation.
 '''
 import pandas as pd
+import datetime as dt
 
 
 def convert_dates(dataframe):
@@ -32,7 +33,9 @@ def filter_years(dataframe, start, end):
             The dataframe filtered by date.
     '''
     # TODO : Filter by dates
-    return dataframe[(dataframe["Date_Plantation"].dt.year >= start) & (dataframe["Date_Plantation"].dt.year <= end)]
+    start_datetime = dt.datetime(start, 1, 1)
+    end_datetime = dt.datetime(end, 12, 31)
+    return dataframe[(dataframe["Date_Plantation"] >= start_datetime) & (dataframe["Date_Plantation"] <= end_datetime)]
 
 def summarize_yearly_counts(dataframe):
     '''
@@ -48,7 +51,7 @@ def summarize_yearly_counts(dataframe):
             trees for each neighborhood each year.
     '''
     # TODO : Summarize df
-    return dataframe.groupby(["Arrond_Nom", "Date_Plantation"]).size().reset_index(name="Counts")
+    return dataframe.groupby(["Arrond_Nom", dataframe["Date_Plantation"].dt.year]).size().reset_index(name="Counts")
 
 
 def restructure_df(yearly_df):
