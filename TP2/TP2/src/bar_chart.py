@@ -21,7 +21,7 @@ def init_figure():
     '''
     fig = go.Figure()
 
-    # TODO : Update the template to include our new theme and set the title
+    # Update the template to include our new theme and set the title
     pio.templates.default = pio.templates['simple_white']
 
     fig.update_layout(
@@ -46,7 +46,7 @@ def draw(fig, data, mode):
             fig: The figure comprising the drawn bar chart
     '''
     fig = go.Figure(fig)  # conversion back to Graph Object
-    # TODO : Update the figure's data according to the selected mode DONE
+    # Update the figure's data according to the selected mode DONE
     fig.data = []
     
     for player, player_data in data.groupby(by='Player'):
@@ -67,6 +67,6 @@ def update_y_axis(fig, mode):
         Returns: 
             The updated figure
     '''
-    # TODO : Update the y axis title according to the current mode DONE
+    # Update the y axis title according to the current mode DONE
     fig.update_layout(yaxis_title='Lines (%)' if mode == MODES['percent'] else 'Lines (Count)')
     return fig
