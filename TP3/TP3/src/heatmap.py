@@ -28,5 +28,6 @@ def get_figure(data):
     fig = px.imshow(data, labels=heatmap_labels)
     fig.update_xaxes(dtick=1)
     fig.update_layout(dragmode=False)
+    fig.update_traces(hovertemplate=hover_template.get_heatmap_hover_template())
 
     return fig

@@ -93,4 +93,6 @@ def get_figure(line_data, arrond, year):
     )
     fig.update_yaxes(title_text="Trees")
     fig.update_xaxes(tickformat="%d %b", tickangle=-45)
+    fig.update_traces(hovertemplate=hover_template.get_linechart_hover_template())
+    
     return fig
