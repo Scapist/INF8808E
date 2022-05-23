@@ -26,12 +26,11 @@ def get_empty_figure():
         'zeroline': False,
         'showgrid': False,
         'showline': False,
-        'autorange': True,
     }
     no_data_annotation = {
         'text': 'No data to display. Select a cell in the heatmap for more information.',
-        'x': 0,
-        'y': 0,
+        'x': 0.5,
+        'y': 0.5,
         'showarrow': False,
     }
 
@@ -57,7 +56,21 @@ def add_rectangle_shape(fig):
         paper of the figure. The height goes from
         0.25% to 0.75% the height of the figure.
     '''
-    return None
+    fig.update_xaxes(range=[0, 1])
+    fig.update_yaxes(range=[0, 1])
+
+    fig.add_shape(
+        type="rect",
+        x0=0,
+        x1=1,
+        y0=0.25,
+        y1=0.75,
+        fillcolor=THEME["pale_color"],
+        line_color=THEME["pale_color"],
+        layer="below",
+    )
+
+    return fig
 
 
 def get_figure(line_data, arrond, year):
