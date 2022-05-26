@@ -31,3 +31,4 @@ def get_figure(data):
     fig.update_traces(hovertemplate=hover_template.get_heatmap_hover_template())
 
     return fig
+    

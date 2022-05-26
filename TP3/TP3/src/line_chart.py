@@ -1,7 +1,6 @@
 '''
     Contains some functions related to the creation of the line chart.
 '''
-import plotly.express as px
 import plotly.graph_objects as go
 import hover_template
 
@@ -60,14 +59,14 @@ def add_rectangle_shape(fig):
     fig.update_yaxes(range=[0, 1])
 
     fig.add_shape(
-        type="rect",
+        type='rect',
         x0=0,
         x1=1,
         y0=0.25,
         y1=0.75,
-        fillcolor=THEME["pale_color"],
-        line_color=THEME["pale_color"],
-        layer="below",
+        fillcolor=THEME['pale_color'],
+        line_color=THEME['pale_color'],
+        layer='below',
     )
 
     return fig
@@ -102,10 +101,10 @@ def get_figure(line_data, arrond, year):
     )
     fig = go.Figure(
         data=[scatter_trace],
-        layout_title_text=f"Trees planted in {arrond} in {year}",
+        layout_title_text=f'Trees planted in {arrond} in {year}',
     )
-    fig.update_yaxes(title_text="Trees")
-    fig.update_xaxes(tickformat="%d %b", tickangle=-45)
+    fig.update_yaxes(title_text='Trees')
+    fig.update_xaxes(tickformat='%d %b', tickangle=-45)
     fig.update_traces(hovertemplate=hover_template.get_linechart_hover_template())
     
     return fig

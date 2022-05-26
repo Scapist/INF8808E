@@ -1,9 +1,9 @@
 '''
     Contains some functions to preprocess the data used in the visualisation.
 '''
-import pandas as pd
-import datetime as dt
 
+import datetime as dt
+import pandas as pd
 
 def convert_dates(dataframe):
     '''
@@ -16,7 +16,6 @@ def convert_dates(dataframe):
     '''
     # TODO : Convert dates
     dataframe["Date_Plantation"] = pd.to_datetime(dataframe["Date_Plantation"])
-    
     return dataframe
 
 
@@ -75,7 +74,6 @@ def restructure_df(yearly_df):
     # TODO : Restructure df and fill empty cells with 0
 
     dataframe = yearly_df.pivot(index="Arrond_Nom", columns="Date_Plantation", values="Counts") 
-
     return dataframe.fillna(0)
 
 
