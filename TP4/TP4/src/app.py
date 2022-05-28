@@ -45,8 +45,8 @@ fig = bubble.update_axes_labels(fig)
 fig = bubble.update_template(fig)
 fig = bubble.update_legend(fig)
 
-fig.update_layout(height=600, width=1000)
-fig.update_layout(dragmode=False)
+#fig.update_layout(height=600, width=1000)
+#fig.update_layout(dragmode=False)
 
 app.layout = html.Div(className='content', children=[
     html.Header(children=[
