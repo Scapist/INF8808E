@@ -70,5 +70,5 @@ def sort_dy_by_yr_continent(my_df):
     '''
     # TODO : Sort the dataframe
     my_df = my_df.sort_values(['Year', 'Continent'])
-    print(my_df)
-    return None
+
+    return my_df

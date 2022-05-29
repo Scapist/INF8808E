@@ -18,4 +18,4 @@ def get_bubble_hover_template():
     '''
     # TODO : Generate tooltip
 
-    return ''
+    return '<extra></extra>'

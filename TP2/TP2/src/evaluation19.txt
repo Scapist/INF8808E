@@ -1,0 +1,39 @@
+Groupe : 19
+
+*****
+
+** Data preprocessing ** 
+
+Points : [ 6/6]
+Commentaires : 
+
+** Bar Chart ** 
+
+Points : [ 6.5/7]
+Commentaires : 0.25	There should be no horizontal grid on the chart. 
+               0.25	It is missing the vertical line for y-axis 
+               0.25	It missing the thicks on x-axis
+
+** Theme ** 
+
+Points : [ 2/2]
+Commentaires :  You can use: layout = go.layout() instead of the dictionary
+
+** Tooltip ** 
+
+Points [ 2/2]
+Commentaires : 
+
+** Display mode toggle ** 
+
+Points [ 2/2]
+Commentaires : 
+
+** Overall quality and clarity of the submission ** 
+
+Points : [ 0.75/1]
+Commentaires :  0.25	Use clear indentations
+
+*****
+
+TOTAL : [19/20]
