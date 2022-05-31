@@ -25,7 +25,6 @@ def get_plot(my_df, gdp_range, co2_range):
             The generated figure
     '''
     # TODO : Define figure with animation
-
     fig = px.scatter(my_df,
                      x='GDP',
                      y='CO2',
@@ -38,6 +37,7 @@ def get_plot(my_df, gdp_range, co2_range):
                      size='Population',
                      size_max=30,
                      color='Continent',
+                     custom_data=['Country Name', 'Population'],
                      )
     fig.update_traces(marker=dict(sizemin=5))
     return fig
