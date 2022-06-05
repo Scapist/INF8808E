@@ -29,13 +29,13 @@ def get_range(col, df1, df2):
             The minimum and maximum values across the two dataframes
     '''
     # TODO : Get the range from the dataframes
-    maxDf1 = df1[col].max()
-    maxDf2 = df2[col].max()
-    minDf1 = df1[col].min()
-    minDf2 = df2[col].min()
-    totalMax = max(maxDf1, maxDf2)
-    totalMin = min(minDf1, minDf2)
-    return [totalMin, totalMax]
+    max_df1 = df1[col].max()
+    max_df2 = df2[col].max()
+    min_df1 = df1[col].min()
+    min_df2 = df2[col].min()
+    total_max = max(max_df1, max_df2)
+    total_min = min(min_df1, min_df2)
+    return [total_min, total_max]
 
 
 def combine_dfs(df1, df2):
@@ -70,5 +70,5 @@ def sort_dy_by_yr_continent(my_df):
     '''
     # TODO : Sort the dataframe
     my_df = my_df.sort_values(['Year', 'Continent'])
-    print(my_df)
-    return None
+
+    return my_df

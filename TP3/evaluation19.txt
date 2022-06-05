@@ -1,0 +1,37 @@
+Groupe : 19
+
+*****
+
+** Prétraitement des données ************************************************** 
+
+Points : [/5]
+Commentaires : 
+
+** Carte de chaleur ***********************************************************
+
+Points : [ 2.75/3]
+Commentaires : 0.25	The x and Y axis titles were not supposed to be shown
+
+** Graphique lineaire *********************************************************
+
+Points : [ 6/6]
+Commentaires : 
+
+** Theme **********************************************************************
+
+Points [ 2/2]
+Commentaires :  
+
+** Info-bulle *****************************************************************
+
+Points [ 3/3]
+Commentaires : 
+
+** Qualité globale et clarté de la soumission *********************************
+
+Points : [ 1/1]
+Commentaires :  
+
+*******************************************************************************
+
+TOTAL : [19.75/20]
