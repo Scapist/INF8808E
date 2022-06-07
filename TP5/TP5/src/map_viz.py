@@ -36,6 +36,7 @@ def add_choro_trace(fig, montreal_data, locations, z_vals, colorscale):
       marker_line_color='white',
       showscale=False,
       featureidkey='properties.NOM',
+      hovertemplate=hover.map_base_hover_template(),
     )
     fig.add_trace(new_trace)
     return fig
@@ -54,17 +55,14 @@ def add_scatter_traces(fig, street_df):
 
     '''
     # Add the scatter markers to the map base
-    data_label = 'properties.TYPE_SITE_INTERVENTION'
-    every_type_site_intervention = street_df.groupby([data_label]).groups.keys()
-    for type_site_intervention in every_type_site_intervention:
-      row = street_df.loc[street_df[data_label] == type_site_intervention]
-      new_trace = go.Scattermapbox(
-        lon=row['properties.LONGITUDE'],
-        lat=row['properties.LATITUDE'],
-        text=row[data_label],
-        name=type_site_intervention,
-        showlegend=True,
-        marker=go.scattermapbox.Marker(size=10, opacity=0.5),
-      )
-      fig.add_trace(new_trace)
+    fig_scatter = px.scatter_mapbox(
+        street_df,
+        lat="properties.LATITUDE",
+        lon="properties.LONGITUDE",
+        custom_data=["properties.TYPE_SITE_INTERVENTION", "properties.NOM_PROJET", "properties.MODE_IMPLANTATION", "properties.OBJECTIF_THEMATIQUE"],
+        color="properties.TYPE_SITE_INTERVENTION",
+    )
+    fig_scatter.update_traces(hovertemplate=hover.map_marker_hover_template('%{customdata[0]}'))
+    
+    fig = go.Figure(fig.data + fig_scatter.data)
     return fig
