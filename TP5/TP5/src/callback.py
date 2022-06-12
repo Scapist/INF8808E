@@ -61,16 +61,18 @@ def map_marker_clicked(figure, curve, point, title, mode, theme, style): # noqa 
             style: The updated display style for the panel
     '''
     # TODO : Handle clicks on the markers
-    style["visibility"] = "visible"
-    
     title = figure["data"][curve]['customdata'][point][1]
-    mode = figure["data"][curve]['customdata'][point][2]
-    theme = figure["data"][curve]['customdata'][point][3].split("\n")
-
     title_color = figure["data"][curve]['marker']['color']
     title = html.B(title, style={'color': title_color})
+    
+    mode = figure["data"][curve]['customdata'][point][2]
 
-    themes = html.Ul(children=[html.Li(t) for t in theme])
-    theme = html.Div(children=["Thématique:", html.Br(), themes])
 
+    theme = figure["data"][curve]['customdata'][point][3]
+    if theme != None:
+        themes = html.Ul(children=[html.Li(t) for t in theme.split("\n")])
+        theme = html.Div(children=["Thématique:", html.Br(), themes])
+
+    style["visibility"] = "visible"
+    
     return title, mode, theme, style
