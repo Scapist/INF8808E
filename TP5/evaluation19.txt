@@ -1,0 +1,33 @@
+Groupe : 19
+
+*****
+
+
+** Prétraitement des données ** 
+
+Points : [ 5/5]
+Commentaires :  
+
+** Carte à nuage de points ** 
+
+Points : [ 5.5/6]
+Commentaires : 0.5	The size and opacity for the markers were not set 
+
+** Info-bulle ** 
+
+Points [ 3/3]
+Commentaires :  
+
+** Panneau d'information ** 
+
+Points [ 5/5]
+Commentaires : 
+
+** Qualité globale et clarté de la soumission ** 
+
+Points : [ 1/1]
+Commentaires :  
+
+*****
+
+TOTAL : [ 19.5/20]

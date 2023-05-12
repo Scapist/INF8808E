@@ -1,0 +1,33 @@
+Groupe : 19
+
+*****
+
+** Data Exploration ** 
+
+Points : [ /7]
+Commentaires : 0.5	It was asked to use advanced callbacks with ctx=dash.callback_context on question 4
+
+** Data Processing ** 
+
+Points : [ 3/3]
+Commentaires :  
+
+** Bubble Chart ** 
+
+Points : [ 7/7]
+Commentaires : 
+
+** Info-bulle ** 
+
+Points [ 2/2]
+Commentaires : 
+
+
+** Qualité globale et clarté de la soumission ** 
+
+Points : [ 1/1]
+Commentaires :  
+
+*****
+
+TOTAL : [ 19.5/20]
